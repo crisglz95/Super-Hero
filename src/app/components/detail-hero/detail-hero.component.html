@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="jumbotron">
+        <h2 class="text-center">{{detalleSuper.nombre}}</h2>
+        <div class="row mt-5">
+            <div class="col-6">
+                <img [src]="detalleSuper.imagen" alt="imagen no encontrada" class="img-fluid">
+            </div>
+            <div class="col-6">
+                <h3>Publisher <small>{{detalleSuper.biografia.publisher}}</small></h3>
+                <h3>Alias</h3>
+                <ul>
+                    <li *ngFor="let alias of detalleSuper.biografia.aliases">{{alias}}</li>
+                </ul>
+                <h3>First Appearence</h3>
+                <p>{{detalleSuper.aparicion}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center mt-5">Stats</h2>
+                <div class="mt-2">
+                    <h4>Intelligence</h4>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" [ngStyle]="{'width': detalleSuper.estadisticas.intelligence + '%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{detalleSuper.estadisticas.intelligence}}%</div>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <h4>Strength</h4>
+                    <div class="progress">
+                        <div class="progress-bar bg-info" role="progressbar" [ngStyle]="{'width': detalleSuper.estadisticas.strength + '%'}" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{detalleSuper.estadisticas.strength}}%</div>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <h4>Speed</h4>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" [ngStyle]="{'width': detalleSuper.estadisticas.speed + '%'}" aria-valuenow="47" aria-valuemin="0" aria-valuemax="100">{{detalleSuper.estadisticas.speed}}%</div>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <h4>Durability</h4>
+                    <div class="progress">
+                        <div class="progress-bar bg-danger" role="progressbar" [ngStyle]="{'width': detalleSuper.estadisticas.durability + '%'}" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">{{detalleSuper.estadisticas.durability}}%</div>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <h4>Power</h4>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" role="progressbar" [ngStyle]="{'width': detalleSuper.estadisticas.power + '%'}" aria-valuenow=detalleSuper.estadisticas.power aria-valuemin="0" aria-valuemax="100">{{detalleSuper.estadisticas.power}}%</div>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <h4>Combat</h4>
+                    <div class="progress">
+                        <div class="progress-bar bg-secondary" role="progressbar" [ngStyle]="{'width': detalleSuper.estadisticas.combat + '%'}" aria-valuenow="detalleSuper.estadisticas.combat" aria-valuemin="0" aria-valuemax="100">{{detalleSuper.estadisticas.combat}}%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

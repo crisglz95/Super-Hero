@@ -1,1 +1,12 @@
-<p>home works!</p>
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-4 mt-4" *ngFor="let heroe of arrayHeroes">
+            <app-card-hero [heroeRecibido]="heroe"></app-card-hero>
+        </div>
+    </div>
+</div>
+<div class="paginacion mt-3">
+    <i class="fa fa-arrow-left" (click)="PaginacionLeft()"></i>
+    <div class="ml-2 mr-2">Pagina {{indicePagina}}</div>
+    <i class="fa fa-arrow-right" (click)="PaginacionRight()"></i>
+</div>
