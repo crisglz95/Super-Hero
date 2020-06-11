@@ -1,5 +1,5 @@
 <div class="card" style="width: 18rem;">
-    <img [src]="heroeRecibido.imagen" class="card-img-top" alt="...">
+    <img [src]="heroeRecibido.imagen.url" class="card-img-top" alt="...">
     <div class="card-body">
         <h5 class="card-title text-center">{{heroeRecibido.nombre}}</h5>
         <button class="btn btn-outline-primary btn-block" (click)="GoToDescription(heroeRecibido.id)">Ver Detalles</button>

@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
           let SuperHeroeInfo: any = {
             id: SuperHeroe.id,
             nombre: SuperHeroe.name, 
-            imagen: SuperHeroe.image.url
+            imagen: SuperHeroe.image
           }
           return SuperHeroeInfo;
         })

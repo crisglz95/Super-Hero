@@ -9,7 +9,8 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 //Archivo de Rutas
 import { appRouting } from './app.routes';
 import { CardHeroComponent } from './components/card-hero/card-hero.component';
-import { DetailHeroComponent } from './components/detail-hero/detail-hero.component'
+import { DetailHeroComponent } from './components/detail-hero/detail-hero.component';
+import { SearchHeroComponent } from './components/search-hero/search-hero.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DetailHeroComponent } from './components/detail-hero/detail-hero.compon
     HomeComponent,
     NavbarComponent,
     CardHeroComponent,
-    DetailHeroComponent
+    DetailHeroComponent,
+    SearchHeroComponent
   ],
   imports: [
     BrowserModule,

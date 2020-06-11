@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="text-center">Buscador de Superheroe</h1>
+
+        <div class="form-group">
+            <label for="">Ingresa el nombre del superheroe</label>
+            <input type="text" class="form-control" placeholder="Buscar Superheroe" #inputSearch>
+        </div>
+        <div class="row">
+            <ng-container *ngIf="!loading">
+                <div class="col-4" *ngFor="let heroe of heroeRecibido">
+                    <app-card-hero [heroeRecibido]='heroe'></app-card-hero>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
