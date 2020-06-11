@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { fromEvent, from } from 'rxjs';
-import { debounceTime, pluck, switchMap, map, concatMap } from 'rxjs/operators';
+import { debounceTime, pluck, switchMap, map, concatMap, tap } from 'rxjs/operators';
 import { HeroeResultado } from '../../interfaces/superheroe.interface';
 
 @Component({
@@ -14,7 +14,7 @@ export class SearchHeroComponent implements OnInit {
   @ViewChild('inputSearch') inputSearch: ElementRef;
   private url = 'https://superheroapi.com/api.php/271791440634137/search/';
   public heroeRecibido: Array<any> = [];
-  public loading = true;
+  public loading = false;
 
   constructor(private http: HttpClient) { }
 
@@ -28,10 +28,14 @@ export class SearchHeroComponent implements OnInit {
   }
 
   public SearchHero(){
-    this.heroeRecibido = [];
-    this.loading = true;
+    // this.loading = true;
+    //this.heroeRecibido = [];
     fromEvent(this.inputSearch.nativeElement, 'keyup')
-      .pipe(
+    .pipe(
+      tap(()=>{
+        this.loading = true;
+        this.heroeRecibido = [];
+      }),
         pluck('target', 'value'),
         debounceTime(1500),
         switchMap(nombreHeroe => this.http.get(`${this.url}${nombreHeroe}`)

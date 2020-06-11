@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   }
 
   public getHeroes(){
+    this.loading = true;
     this.arrayHeroes = [];
     from(this.id).pipe(
       concatMap((id: number) => this.apiHeroe.ObtenerSuperHeroe(id)
@@ -39,6 +40,7 @@ export class HomeComponent implements OnInit {
       ))
     ).subscribe((SuperHeroe: any) =>{
       this.arrayHeroes.push(SuperHeroe);
+      if(this.arrayHeroes.length ==12) this.loading = false;
     })
   }
 
